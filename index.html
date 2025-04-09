@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Трекер задач</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<h1>Трекер задач</h1>
+
+<!-- Блок входа -->
+<div id="loginForm">
+    <h2>Вход</h2>
+    <input type="text" id="username" placeholder="Имя пользователя" /><br /><br />
+    <input type="password" id="password" placeholder="Пароль" /><br /><br />
+    <button id="loginBtn">Войти</button>
+    <hr />
+    <h3>Регистрация</h3>
+    <input type="text" id="regUsername" placeholder="Имя пользователя" /><br /><br />
+    <input type="password" id="regPassword" placeholder="Пароль" /><br /><br />
+    <input type="email" id="regEmail" placeholder="Email" /><br /><br />
+    <button onclick="register(
+      document.getElementById('regUsername').value,
+      document.getElementById('regPassword').value,
+      document.getElementById('regEmail').value
+    )">Зарегистрироваться</button>
+</div>
+
+<!-- Информация о пользователе -->
+<div id="userInfo" style="display: none;"></div>
+
+<!-- Форма добавления задачи -->
+<div id="taskForm" style="display: none;">
+    <h2>Добавить задачу</h2>
+    <input type="text" id="taskTitle" placeholder="Название задачи" /><br /><br />
+    <textarea id="taskDescription" placeholder="Описание задачи"></textarea><br /><br />
+    <label>Приоритет:</label>
+    <select id="taskPriority">
+        <option value="низкий">Низкий</option>
+        <option value="средний" selected>Средний</option>
+        <option value="высокий">Высокий</option>
+    </select><br /><br />
+    <button id="addTaskBtn">Добавить задачу</button>
+</div>
+
+<hr />
+
+<!-- Список задач -->
+<div id="taskList">
+    <p>Загрузка задач...</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
